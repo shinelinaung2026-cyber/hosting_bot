@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: telegram-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT main:app
+    envVars:
+      - key: BOT_TOKEN
+        value: your_bot_token_here
+      - key: OWNER_ID
+        value: 6786210764
+      - key: ADMIN_ID
+        value: 6786210764
+      - key: YOUR_USERNAME
+        value: @shine_linaung
+      - key: UPDATE_CHANNEL
+        value: https://t.me/tglottery009
